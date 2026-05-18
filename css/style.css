@@ -11,17 +11,10 @@
   box-sizing: border-box;
 }
 
-/* ── Background ──
-   A linen-textured warm cream with a subtle radial vignette darkening the
-   edges, giving the feel of aged paper or a country road map.
-   Swap the SVG noise filter for a real texture image if you have one:
-     background: url('images/texture.jpg') center/cover fixed;
-   followed by the ::before overlay below.
-*/
 body {
   background-color: #e8e0d5;
   background-image: radial-gradient(circle at center, rgba(232,224,213,0.8) 0%, rgba(232,224,213,0.6) 70%, rgba(232,224,213,0.4) 100%);
-font-family: var(--font);
+  font-family: var(--font);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -38,6 +31,13 @@ body::before {
     z-index: -1;
 }
 
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header {
   font-family: "Signika", sans-serif;
   font-size: 2.5rem;
@@ -51,7 +51,7 @@ body::before {
 
 .sign-wrap {
   position: relative;
-  display: inline-block; /* shrinks to fit the image */
+  display: inline-block;
 }
 
 .sign-wrap img {
@@ -85,6 +85,7 @@ body::before {
   margin: 20px auto;
   padding: 20px;
   flex: 1;
+  justify-content: center;
 }
 
 .card {
@@ -189,11 +190,12 @@ body::before {
 .sign-hint {
   font-family: "Signika", sans-serif;
   font-size: 1.3rem;
-font-weight: 600;
+  font-weight: 600;
   color: #6b5c45;
   text-align: center;
   letter-spacing: 0.05em;
   margin-top: 6px;
+  justify-content: center;
 }
 
 .title::before {

@@ -1,76 +1,102 @@
 :root {
   --primary-color: #f5f0eb;
   --background-color: #f5f0eb;
-  --font: sans-serif;
+  --font: Signika, sans-serif;
+  --sign-color: #006837;
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Background ──
+   A linen-textured warm cream with a subtle radial vignette darkening the
+   edges, giving the feel of aged paper or a country road map.
+   Swap the SVG noise filter for a real texture image if you have one:
+     background: url('images/texture.jpg') center/cover fixed;
+   followed by the ::before overlay below.
+*/
+body {
+  background-color: #e8e0d5;
+  background-image: radial-gradient(circle at center, rgba(232,224,213,0.8) 0%, rgba(232,224,213,0.6) 70%, rgba(232,224,213,0.4) 100%);
+font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://www.ottsworld.com/wp-content/uploads/2023/09/Ireland-Landscapes-05059.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
 }
 
 .header {
-    font-family: "Signika", sans-serif;
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    position: relative;
-    text-align: center;
+  font-family: "Signika", sans-serif;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
 
+.header img {
+  max-height: 220px;
+  width: auto;
 }
 
 .zora {
-    color: #f5f0eb;
-    position: absolute;
-    top: 196px;
-    left: 108px;
+  color: #f5f0eb;
+  position: absolute;
+  top: 130px;
+  left: 595px;
+  font-size: 1.5rem;
 }
 
 .zora-irish {
-    color: #f5f0eb;
-    position: absolute;
-    top: 123px;
-    left: 148px;
+  color: #f5f0eb;
+  position: absolute;
+  top: 90px;
+  left: 614px;
+  font-size: 1.6rem;
 }
 
-body {
-  background: var(--background-color);
-  font-family: var(--font);
-  display: flex;
-  justify-content: center;
-}
-
-/* Timeline Container */
 .timeline {
-  background: var(--primary-color);
+  background: transparent;
   margin: 20px auto;
   padding: 20px;
+  flex: 1;
 }
 
-/* Card container */
 .card {
   position: relative;
   max-width: 400px;
 }
 
-/* setting padding based on even or odd */
 .card:nth-child(odd) {
   padding: 30px 0 30px 30px;
 }
 .card:nth-child(even) {
   padding: 30px 30px 30px 0;
 }
-/* Global ::before */
+
+/* Road line */
 .card::before {
   content: "";
   position: absolute;
   width: 50%;
-  border: solid orangered;
+  border: solid rgb(0, 0, 0);
 }
 
-/* Setting the border of top, bottom, left */
 .card:nth-child(odd)::before {
   left: 0px;
   top: -4.5px;
@@ -79,7 +105,6 @@ body {
   border-radius: 50px 0 0 50px;
 }
 
-/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
 @media only screen and (max-width: 400px) {
   .card:nth-child(odd)::before {
     top: -5px;
@@ -87,7 +112,6 @@ body {
   }
 }
 
-/* Setting the border of top, bottom, right */
 .card:nth-child(even)::before {
   right: 0;
   top: 0;
@@ -96,41 +120,72 @@ body {
   border-radius: 0 50px 50px 0;
 }
 
-/* Removing the border if it is the first card */
 .card:first-child::before {
   border-top: 0;
   border-top-left-radius: 0;
 }
 
-/* Removing the border if it is the last card  and it's odd */
 .card:last-child:nth-child(odd)::before {
   border-bottom: 0;
   border-bottom-left-radius: 0;
 }
 
-/* Removing the border if it is the last card  and it's even */
 .card:last-child:nth-child(even)::before {
   border-bottom: 0;
   border-bottom-right-radius: 0;
 }
 
-/* Information about the timeline */
 .info {
-  display: flex;
-  flex-direction: column;
-  background: #333;
-  color: gray;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 6px;
+  padding: 8px;
+  background: #006837;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Title of the card */
+.info:hover {
+  animation: float 2s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.sign-inner {
+  border: 3px solid white;
+  border-radius: 3px;
+  padding: 12px 50px;
+}
+
 .title {
-  color: orangered;
+  font-family: "Signika", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+  font-style: italic;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
 }
 
-/* Timeline dot  */
+.title-english {
+  font-family: "Signika", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sign-hint {
+  font-family: "Signika", sans-serif;
+  font-size: 1.3rem;
+font-weight: 600;
+  color: #6b5c45;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
+}
+
 .title::before {
   content: "";
   position: absolute;
@@ -138,20 +193,25 @@ body {
   height: 10px;
   background: white;
   border-radius: 999px;
-  border: 3px solid orangered;
+  border: 3px solid rgb(0, 0, 0);
 }
 
-/* text right if the card is even  */
-.card:nth-child(even) > .info > .title {
-  text-align: right;
+.card:nth-child(odd) > .info > .sign-inner > .title::before {
+  left: -87px;
+  top: 4px;
 }
 
-/* setting dot to the left if the card is odd */
-.card:nth-child(odd) > .info > .title::before {
-  left: -45px;
+.card:nth-child(even) > .info > .sign-inner > .title::before {
+  right: -88px;
+  top: 4px;
 }
 
-/* setting dot to the right if the card is odd */
-.card:nth-child(even) > .info > .title::before {
-  right: -45px;
+#footer {
+  font-family: var(--font);
+  color: #6b5c45;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }

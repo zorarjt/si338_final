@@ -49,25 +49,35 @@ body::before {
   text-align: center;
 }
 
-.header img {
+.sign-wrap {
+  position: relative;
+  display: inline-block; /* shrinks to fit the image */
+}
+
+.sign-wrap img {
+  display: block;
   max-height: 220px;
   width: auto;
 }
 
 .zora {
-  color: #f5f0eb;
   position: absolute;
-  top: 130px;
-  left: 595px;
-  font-size: 1.5rem;
+  color: #f5f0eb;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+  white-space: nowrap;
 }
 
 .zora-irish {
-  color: #f5f0eb;
   position: absolute;
-  top: 90px;
-  left: 614px;
-  font-size: 1.6rem;
+  color: #f5f0eb;
+  top: 36%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+  white-space: nowrap;
 }
 
 .timeline {

@@ -107,6 +107,11 @@ main {
   max-width: 400px;
 }
 
+.card a {
+    text-decoration: none;
+    display: block;
+}
+
 .card:nth-child(odd) {
   padding: 30px 0 30px 30px;
 }
@@ -214,14 +219,14 @@ main {
   border: 3px solid rgb(0, 0, 0);
 }
 
-.card:nth-child(odd) > .info > .sign-inner > .title::before {
-  left: -87px;
-  top: 4px;
+.card:nth-child(odd) .sign-inner .title::before {
+    left: -87px;
+    top: 4px;
 }
 
-.card:nth-child(even) > .info > .sign-inner > .title::before {
-  right: -88px;
-  top: 4px;
+.card:nth-child(even) .sign-inner .title::before {
+    right: -88px;
+    top: 4px;
 }
 
 #footer {

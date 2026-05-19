@@ -54,16 +54,16 @@
             display: block;
         }
 
-        .page-header {
+        header {
             text-align: center;
             padding: 24px 20px 8px;
             font-family: var(--font);
         }
-        .page-header h1 {
+        header h1 {
             font-size: 2rem;
             color: var(--sign-color);
         }
-        .page-header p {
+        header p {
             font-size: 0.9rem;
             color: #6b5c45;
             margin-top: 4px;

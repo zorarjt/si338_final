@@ -5,14 +5,22 @@ body {
 }
 
 .corner-sign {
-    position: fixed;
-    top: 70px;
+    position: sticky;
+    top: 1000px;
     left: 16px;
     z-index: 99;
+    width: fit-content;
+    margin-top: 100px;
 }
 
 .car-nav {
+    position: fixed;
+    top: 10px;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
 }
 
 .corner-sign .info {
@@ -186,8 +194,8 @@ details[open] summary::before {
     transform: translateY(-2px);
 }
 
-.car-nav.left  { left: 16px; }
-.car-nav.right { right: 16px; }
+.car-nav.left  { left: 16px;}
+.car-nav.right { right: 16px;}
 
 .car-nav.right .car-emoji {
     display: inline-block;
@@ -201,27 +209,20 @@ details[open] summary::before {
 
 nav{
     min-height:15vh;
+    width: fit-content;
 }
 
-@media screen and (min-width:600px){
-    .car-nav{
-        position: fixed;
+@media screen and (min-width: 600px) {
+    .car-nav {
+        top: auto;
         bottom: 20px;
     }
-    .car-nav.left {
-        left: 16px;
+    .corner-sign {
+        position: fixed;
+        top: 16px;
+        margin-top: 0;
     }
-    .car-nav.right {
-        right: 16px;
-    }
-    nav{
+    nav {
         min-height: inherit;
     }
-    .corner-sign {
-    position: fixed;
-    top: 20px;
-    left: 16px;
-    z-index: 99;
-}
-
 }

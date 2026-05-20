@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <title>Bia — Food</title>
+    <!-- <style>
+        .left
+        { display: none}
+    </style> -->
 </head>
 <body>
     <a href="#main" class="skip">Skip to Main Content</a>
     
     <header>
-        <a href="index.html" class="corner-sign">
-        <div class="info">
-            <div class="sign-inner">
-                <span class="title">Bia</span>
-                <span class="title-english">Food</span>
-            </div>
-        </div>
-    </a>
-        <h1>Bia </h1>
+        <nav>
+            <a href="index.html" class="corner-sign">
+                <div class="info">
+                    <div class="sign-inner">
+                        <span class="title">Baile</span>
+                        <span class="title-english">Home</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+        <h1>Bia</h1>
         <h2>Food</h2>
     </header>
-    </div>
     <main id = "main">
     <div class="controls-wrap">
         <div class="filter-group">
@@ -34,28 +39,32 @@
         </div>
 
         <div class="filter-group">
-            <h3>Sort by Week</h3>
+            <details><summary><h3>Sort by Week</h3></summary>
             <button type="button" class="control" data-filter=".week1">Week 1</button>
             <button type="button" class="control" data-filter=".week2">Week 2</button>
             <button type="button" class="control" data-filter=".week3">Week 3</button>
+            </details>
         </div>
 
         <div class="filter-group">
-            <h3>Sort by Type</h3>
+            <details><summary><h3>Sort by Type</h3></summary>
+                
             <button type="button" class="control" data-filter=".dessert">Dessert</button>
             <button type="button" class="control" data-filter=".mexican">Mexican</button>
             <button type="button" class="control" data-filter=".drinks">Drinks</button>
             <button type="button" class="control" data-filter=".breakfast">Breakfast</button>
             <button type="button" class="control" data-filter=".sandwich">Sandwich</button>
             <button type="button" class="control" data-filter=".fried">Fried / Takeout</button>
+            </details>
         </div>
 
         <div class="filter-group">
-            <h3>Sort by Place</h3>
+            <details><summary><h3>Sort by Place</h3></summary>
             <button type="button" class="control" data-filter=".inner-dublin">Inner Dublin</button>
             <button type="button" class="control" data-filter=".galway">Galway</button>
             <button type="button" class="control" data-filter=".howth">Howth</button>
             <button type="button" class="control" data-filter=".bray">Bray</button>
+            </details>
         </div>
     </div>
 
@@ -272,16 +281,17 @@
 
     </div>
     
-    <a href="index.html" class="car-nav left">
+  
+
+    </main>
+          <a href="index.html" class="car-nav left">
         <span class="car-emoji">🚗</span>
-        <span>Home</span>
+        <span>About</span>
     </a>
     <a href="scenery.html" class="car-nav right">
         <span>Scenery</span>
         <span class="car-emoji">🚗</span>
     </a>
-
-    </main>
 
     <footer id="footer">
         <p>Created by Zora Tucker for SI 338 Spring 2026</p>

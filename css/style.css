@@ -107,11 +107,6 @@ main {
   max-width: 400px;
 }
 
-.card a {
-    text-decoration: none;
-    display: block;
-}
-
 .card:nth-child(odd) {
   padding: 30px 0 30px 30px;
 }
@@ -119,6 +114,7 @@ main {
   padding: 30px 30px 30px 0;
 }
 
+/* lines */
 .card::before {
   content: "";
   position: absolute;
@@ -141,6 +137,8 @@ main {
   border-width: 5px 5px 5px 0;
   border-radius: 0 50px 50px 0;
 }
+
+/*  curving lines at top/bottom */
 
 .card:first-child::before {
   border-top: 0;

@@ -3,167 +3,170 @@
   --sign-color: #006837;
 }      
         
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
 
-        .corner-sign {
-            position: fixed;
-            top: 16px;
-            left: 16px;
-            z-index: 100;
-            text-decoration: none;
-        }
-        .corner-sign .info {
-            border-radius: 6px;
-            padding: 6px;
-            background: var(--sign-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .corner-sign:hover .info {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        .corner-sign .sign-inner {
-            border: 2px solid white;
-            border-radius: 3px;
-            padding: 6px 16px;
-            text-align: center;
-        }
-        .corner-sign .title {
-            font-family: var(--font);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: white;
-            font-style: italic;
-            display: block;
-            margin-bottom: 2px;
-            position: static; 
-        }
+.corner-sign {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.corner-sign .info {
+    border-radius: 6px;
+    padding: 6px;
+    background: var(--sign-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.corner-sign:hover .info {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.corner-sign .sign-inner {
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 6px 16px;
+    text-align: center;
+}
+
+.corner-sign .title {
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    font-style: italic;
+    display: block;
+    margin-bottom: 2px;
+    position: static; 
+}
+
+/* get rid of dot */
+.corner-sign .title::before { display: none; }
         
-        .corner-sign .title::before { display: none; }
-        
-        .corner-sign .title-english {
-            font-family: "Signika", sans-serif;
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: rgba(255,255,255,0.85);
-            display: block;
-        }
+.corner-sign .title-english {
+    font-family: var(--font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    display: block;
+}
 
-        header {
-            text-align: center;
-            padding: 24px 20px 8px;
-            font-family: var(--font);
-        }
-        header h1 {
-            font-size: 2rem;
-            color: var(--sign-color);
-        }
-        header p {
-            font-size: 0.9rem;
-            color: #6b5c45;
-            margin-top: 4px;
-        }
+header {
+    text-align: center;
+    padding: 24px 20px 8px;
+    font-family: var(--font);
+}
 
-        .filter-group {
-            text-align: center;
-            margin: 8px 0 4px;
-        }
-        .filter-group h3 {
-            font-family: var(--font);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            color: #6b5c45;
-            margin-bottom: 6px;
-        }
+header h1 {
+    font-size: 2rem;
+    color: var(--sign-color);
+}
 
-        .control {
-            font-family: var(--font);
-            font-size: 0.82rem;
-            background: white;
-            border: 2px solid var(--sign-color);
-            color: var(--sign-color);
-            border-radius: 20px;
-            padding: 4px 12px;
-            margin: 3px;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-        .control:hover,
-        .control.mixitup-control-active {
-            background: var(--sign-color);
-            color: white;
-        }
+header p {
+    font-size: 0.9rem;
+    color: #6b5c45;
+    margin-top: 4px;
+}
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 14px;
-            max-width: 900px;
-            margin: 0 auto 100px;
-            padding: 0 16px;
-        }
+.filter-group {
+    text-align: center;
+    margin: 8px 0 4px;
+}
 
-        .mix figure img {
-            width: 200px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 6px;
-            border: 3px solid #006837;
-            display: block;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+ .control {
+    font-family: var(--font);
+    font-size: 0.82rem;
+    background: white;
+    border: 2px solid var(--sign-color);
+    color: var(--sign-color);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin: 3px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
 
-        .mix figure img:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,104,55,0.3);
-        }
+.control:hover,
+.control.mixitup-control-active {
+    background: var(--sign-color);
+    color: white;
+}
 
-        .mix figcaption {
-            font-family: var(--font);
-            font-size: 0.72rem;
-            color: #6b5c45;
-            text-align: center;
-            margin-top: 4px;
-            padding: 0 4px;
-        }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto 100px;
+    padding: 0 16px;
+}
 
-        .car-nav {
-            position: fixed;
-            bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            text-decoration: none;
-            font-family: var(--font);
-            font-size: 0.78rem;
-            color: #6b5c45;
-            background: rgba(245,240,235,0.92);
-            border: 2px solid var(--sign-color);
-            border-radius: 24px;
-            padding: 6px 14px;
-            transition: background 0.2s, transform 0.2s;
-            z-index: 100;
-        }
-        .car-nav:hover {
-            background: var(--sign-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        .car-nav.left  { left: 16px; }
-        .car-nav.right { right: 16px; }
+.mix figure img {
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 3px solid #006837;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-        .car-nav.right .car-emoji {
-        display: inline-block;
-        transform: scaleX(-1);
-        }
+.mix figure img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,104,55,0.3);
+}
 
-        .car-nav .car-emoji {
-            font-size: 1.2rem;
-            line-height: 1;
-        }
+.mix figcaption {
+    font-family: var(--font);
+    font-size: 0.72rem;
+    color: #6b5c45;
+    text-align: center;
+    margin-top: 4px;
+    padding: 0 4px;
+}
+
+.car-nav {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 0.78rem;
+    color: #6b5c45;
+    background: rgba(245,240,235,0.92);
+    border: 2px solid var(--sign-color);
+    border-radius: 24px;
+    padding: 6px 14px;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 100;
+}
+
+.car-nav:hover {
+    background: var(--sign-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.car-nav.left  { left: 16px; }
+.car-nav.right { right: 16px; }
+
+.car-nav.right .car-emoji {
+    display: inline-block;
+    transform: scaleX(-1);
+}
+    
+.car-nav .car-emoji {
+    font-size: 1.2rem;
+    line-height: 1;
+}

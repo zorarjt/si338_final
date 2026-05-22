@@ -227,3 +227,12 @@ nav{
         min-height: inherit;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .car-nav:hover {
+        animation: none;
+        background: var(--sign-color);
+        color: white;
+        transform: translateY(-2px);
+    }
+}

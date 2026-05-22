@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Músaeim — Museums</title>
+
 </head>
 <body>
+    <a href="#main" class="skip">Skip to Main Content</a>
     
+    <header>
+        <nav>
+            <a href="scenery.html" class="car-nav left">
+                <span class="car-emoji">🚗</span>
+                <span>Scenery</span>
+            </a>
+            <a href="index.html" class="corner-sign">
+                <div class="info">
+                    <div class="sign-inner">
+                        <span class="title">Baile</span>
+                        <span class="title-english">Home</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+        <h1>Músaeim & Taispeántais</h1>
+        <h2>Museums & Exhibitions</h2>
+    </header>
+    <main id = "main">
+    <div class="controls-wrap">
+        <div class="filter-group">
+            <h3>Show All</h3>
+            <button type="button" class="control" data-filter="all">All</button>
+        </div>
+
+        <div class="filter-group">
+            <details><summary><h3>Sort by Week</h3></summary>
+            <button type="button" class="control" data-filter=".week1">Week 1</button>
+            <button type="button" class="control" data-filter=".week2">Week 2</button>
+            <button type="button" class="control" data-filter=".week3">Week 3</button>
+            </details>
+        </div>
+
+        <div class="filter-group">
+            <details><summary><h3>Sort by Place</h3></summary>
+            <button type="button" class="control" data-filter=".inner-dublin">Inner Dublin</button>
+            <button type="button" class="control" data-filter=".galway">Galway</button>
+            <button type="button" class="control" data-filter=".howth">Howth</button>
+            <button type="button" class="control" data-filter=".bray">Bray</button>
+            <button type="button" class="control" data-filter=".belfast">Belfast</button>
+            </details>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="mix week1 inner-dublin">
+            <figure>
+                <a href="images/scenery/trinity.JPG"
+                   data-lightbox="scenery"
+                   data-title="📍 Trinity College · As an enjoyer of the show Normal People, it was nice to see the entrance of Trinity in person. I couldn't imagine having so many tourists at my school though">
+                    <img src="images/scenery/trinity.JPG" alt="Front of Trinity Collge with people standing around">
+                </a>
+                <figcaption>📍 Trinity College</figcaption>
+            </figure>
+        </div>
+
+
+    </div>
+
+    </main>
+
+    <footer id="footer">
+        <p>Created by Zora Tucker for SI 338 Spring 2026</p>
+    </footer>
+
+    <script src="dist/mixitup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+    <script src="js/page.js"></script>
 </body>
 </html>

@@ -236,3 +236,12 @@ main {
   font-size: 0.82rem;
   letter-spacing: 0.04em;
 }
+
+#main p{
+  font-family: var(--font);
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 16px auto;
+}

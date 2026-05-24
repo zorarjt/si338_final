@@ -228,11 +228,16 @@ nav{
     }
 }
 
-@media (prefers-reduced-motion: ) {
-    .car-nav:hover {
-        animation: none;
-        background: var(--sign-color);
-        color: white;
-        transform: translateY(-2px);
+@media (prefers-reduced-motion: reduce) {
+   .info,
+    .info:hover,
+    .car-nav,
+    .car-nav:hover,
+    .mix figure img,
+    .mix figure img:hover,
+    details summary::before {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
     }
 }

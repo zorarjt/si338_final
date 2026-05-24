@@ -251,8 +251,15 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .info:hover {
-    animation: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
+  .info,
+    .info:hover,
+    .car-nav,
+    .car-nav:hover,
+    .mix figure img,
+    .mix figure img:hover,
+    details summary::before {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
 }

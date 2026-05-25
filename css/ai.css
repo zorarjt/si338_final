@@ -71,3 +71,9 @@ body::before {
     margin: 0 auto 100px;
     padding: 0 16px;
 }
+/* lightbox keyboard nav */
+
+.keyboard-nav .lb-close:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}

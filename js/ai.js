@@ -20,9 +20,39 @@ var mixer = mixitup(containerEl, {
     }
 });
 
+// lightbox keyboard accessibility
+
+// Trap focus inside lightbox while open, and allow Escape to close
+document.addEventListener('keydown', function (e) {
+    const lightbox = document.querySelector('#lightbox');
+    if (!lightbox || lightbox.style.display === 'none') return;
+ 
+    const focusable = lightbox.querySelectorAll('a, button, [tabindex="0"]');
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+ 
+    if (e.key === 'Tab') {
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    }
+ 
+    if (e.key === 'Escape') {
+        const lbClose = document.querySelector('.lb-close');
+        if (lbClose) lbClose.click();
+    }
+});
 
 
-// The following section was added to get rid of the AXE accessibility notices where a lightbox image is selected
+// The following section was added to get rid of the aXe accessibility notices where a lightbox image is selected
 // because of how the lightbox library is built. It adds the aria-label and role attributes to the lightbox 
 // elements when they are added to the DOM
 

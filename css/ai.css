@@ -1,0 +1,73 @@
+/* card/timeline template by Jatin Sharma: https://codepen.io/j471n/pen/vYJaLvm */
+/* lines */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid rgb(0, 0, 0);
+}
+
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/*  curving lines at top/bottom */
+
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card:nth-child(odd) .sign-inner .title::before {
+    left: -87px;
+    top: 4px;
+}
+
+.card:nth-child(even) .sign-inner .title::before {
+    right: -88px;
+    top: 4px;
+}
+
+/* opacity background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://www.ottsworld.com/wp-content/uploads/2023/09/Ireland-Landscapes-05059.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto 100px;
+    padding: 0 16px;
+}

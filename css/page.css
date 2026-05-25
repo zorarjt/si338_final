@@ -4,6 +4,10 @@ body {
     min-height: 100px;
 }
 
+p{
+    text-align: center;
+}
+
 .corner-sign {
     position: sticky;
     top: 1000px;
@@ -109,16 +113,6 @@ header p {
 .control.mixitup-control-active {
     background: var(--sign-color);
     color: white;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-    max-width: 900px;
-    margin: 0 auto 100px;
-    padding: 0 16px;
 }
 
 .mix figure img {
@@ -236,8 +230,8 @@ nav{
     .mix figure img,
     .mix figure img:hover,
     details summary::before {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
+        animation: none;
+        transition: none;
+        transform: none;
     }
 }

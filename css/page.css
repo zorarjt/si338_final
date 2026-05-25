@@ -207,7 +207,7 @@ details[open] summary::before {
     font-size: 1.2rem;
     line-height: 1;
 }
-
+/* mobile */
 nav{
     min-height:15vh;
     width: fit-content;

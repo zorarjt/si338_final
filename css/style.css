@@ -10,7 +10,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/* no line link */
 a {
     text-decoration: none;
 }
@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
+/* opacity background */
 body::before {
     content: "";
     position: fixed;
@@ -41,7 +41,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
-
+/* keep skip out of main view */
 .skip {
     position: absolute;
     top: -100px;
@@ -55,7 +55,7 @@ main {
     padding: 10px;
     z-index: 1000;
 }
-
+/* road sign */
 .header {
   font-family: "Signika", sans-serif;
   font-size: 2.5rem;
@@ -67,11 +67,11 @@ main {
   text-align: center;
 }
 
-.sign-wrap {
+/* .sign-wrap {
   position: relative;
   display: inline-block;
-}
-
+} */
+/* sizing of highway sign */
 .sign-wrap img {
   display: block;
   max-height: 220px;

@@ -15,15 +15,6 @@ a {
     text-decoration: none;
 }
 
-body {
-  background-color: #e8e0d5;
-  background-image: radial-gradient(circle at center, rgba(232,224,213,0.8) 0%, rgba(232,224,213,0.6) 70%, rgba(232,224,213,0.4) 100%);
-  font-family: var(--font);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 main {
   width: 100%;
   display: flex;

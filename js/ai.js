@@ -1,5 +1,6 @@
 var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// added to get rid of scatter motion when a category is selected
 var mixer = mixitup(containerEl, {
     animation: {
         duration: prefersReducedMotion ? 0 : 300,
@@ -18,3 +19,37 @@ var mixer = mixitup(containerEl, {
         }
     }
 });
+
+
+
+// The following section was added to get rid of the AXE accessibility notices where a lightbox image is selected
+// because of how the lightbox library is built. It adds the aria-label and role attributes to the lightbox 
+// elements when they are added to the DOM
+
+const observer = new MutationObserver(function(mutations) {
+  const lbClose = document.querySelector('.lb-close');
+  if (lbClose && !lbClose.getAttribute('aria-label')) {
+    lbClose.setAttribute('aria-label', 'Close');
+  }
+
+  const lbDetails = document.querySelector('.lb-details');
+  if (lbDetails && !lbDetails.closest('[role="region"]')) {
+    const region = document.createElement('div');
+    region.setAttribute('role', 'region');
+    region.setAttribute('aria-label', 'Image caption');
+    lbDetails.parentNode.insertBefore(region, lbDetails);
+    region.appendChild(lbDetails);
+  }
+
+  const lbOuterContainer = document.querySelector('.lb-outerContainer');
+  if (lbOuterContainer && !lbOuterContainer.closest('[role="dialog"]')) {
+    const lbContainer = document.querySelector('#lightbox');
+    if (lbContainer) {
+      lbContainer.setAttribute('role', 'dialog');
+      lbContainer.setAttribute('aria-label', 'Image lightbox');
+      lbContainer.setAttribute('aria-modal', 'true');
+    }
+  }
+});
+
+observer.observe(document.body, { childList: true, subtree: true });

@@ -223,15 +223,27 @@ nav{
 }
 
 @media (prefers-reduced-motion: reduce) {
-   .info,
-    .info:hover,
-    .car-nav,
-    .car-nav:hover,
-    .mix figure img,
-    .mix figure img:hover,
-    details summary::before {
-        animation: none;
+    .car-nav {
         transition: none;
+    }
+    .car-nav:hover {
         transform: none;
+    }
+    .mix figure img {
+        transition: none;
+    }
+    .mix figure img:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    details summary::before {
+        transition: none;
+    }
+    .corner-sign .info {
+        transition: none;
+    }
+    .corner-sign:hover .info {
+        transform: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 }
